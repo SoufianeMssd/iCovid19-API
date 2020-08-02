@@ -1,11 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const morgan = require("morgan");
 
-mongoose.connect("mongodb://localhost/covid19", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/covid19", { useNewUrlParser: true }, () => console.log("DB is ON"));
 
 const db = mongoose.connection;
 
-db.once("open", () => console.log("db is on"));
+app.use(morgan('dev', {
+    skip: function (req, res) { return res.statusCode < 400 }
+}));
+
 
 const app = express();
 
