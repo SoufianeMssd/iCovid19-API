@@ -8,6 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 const coronaRoute = require('./routes/corona');
+const userRoute = require('./routes/user');
 
 // Only log error messages
 app.use(morgan('dev', {
@@ -19,9 +20,10 @@ app.use(morgan('dev', {
 
 // Routes
 app.use('/corona', coronaRoute);
+app.use('/user', userRoute);
 
 
 const port = process.env.PORT || CONSTANT.PORT;
-app.listen(CONSTANT.PORT, console.log(`Server is starting at port 3000 ${port}`));
+app.listen(CONSTANT.PORT, console.log(`Server is starting at port ${port}`));
 
 mongoose.connect('mongodb://localhost/covid19', {useNewUrlParser: true}, () => console.log('Connected to database'));
