@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 
 const coronaRoute = require('./routes/corona');
 const userRoute = require('./routes/user');
+const feedbackRoute = require('./routes/feedback');
 
 // Only log error messages
 app.use(morgan('dev', {
@@ -21,6 +22,7 @@ app.use(morgan('dev', {
 // Routes
 app.use('/corona', coronaRoute);
 app.use('/user', userRoute);
+app.use('/feedback', feedbackRoute);
 
 
 const port = process.env.PORT || CONSTANT.PORT;

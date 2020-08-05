@@ -13,7 +13,7 @@ const coronaSchema = Schema({
     type: Number,
     required: true,
   },
-  date: {
+  createAt: {
     type: Date,
     default: Date.now,
   },
