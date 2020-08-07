@@ -28,4 +28,5 @@ app.use('/feedback', feedbackRoute);
 const port = process.env.PORT || CONSTANT.PORT;
 app.listen(CONSTANT.PORT, console.log(`Server is starting at port ${port}`));
 
-mongoose.connect('mongodb://localhost/covid19', {useNewUrlParser: true}, () => console.log('Connected to database'));
+mongoose.connect('mongodb://localhost/covid19',
+  {useNewUrlParser: true}, () => console.log('Connected to database'));
