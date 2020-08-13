@@ -11,7 +11,7 @@ const coronaSchema = Schema({
   },
   recovered: {
     type: Number,
-    required: true,
+    required: false,
   },
   createAt: {
     type: Date,

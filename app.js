@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const CONSTANT = require('./helper');
 const app = express();
 
@@ -11,6 +12,7 @@ const coronaRoute = require('./routes/corona');
 const userRoute = require('./routes/user');
 const feedbackRoute = require('./routes/feedback');
 
+app.use(cors());
 // Only log error messages
 app.use(morgan('dev', {
   skip: function(req, res) {
