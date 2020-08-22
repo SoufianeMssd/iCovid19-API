@@ -16,10 +16,6 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/', async (req, res) => {
-  // Result of today
-  // const start = moment().startOf('day');
-  // const end = moment().endOf('day');
-  // const savedUpdates = await corona.find({createdAt: {$gte: start, $lt: end}});
   try {
     const savedUpdates = await corona.find();
     res.status(200).json(savedUpdates);
@@ -27,5 +23,6 @@ router.get('/', async (req, res) => {
     res.json({message: err.message});
   }
 });
+
 
 module.exports = router;

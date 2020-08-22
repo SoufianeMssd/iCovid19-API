@@ -9,17 +9,10 @@ const userSchema = Schema({
     type: String,
     required: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
+  photoURL: String,
   createAt: {
     type: Date,
     default: Date.now,
-  },
-  activated: {
-    type: Boolean,
-    default: true,
   },
 });
 

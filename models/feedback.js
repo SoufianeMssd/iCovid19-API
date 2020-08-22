@@ -5,6 +5,7 @@ const feedbackSchema = Schema({
     type: String,
     required: true,
   },
+  likes: [String],
   createdAt: {
     type: Date,
     default: Date.now,
