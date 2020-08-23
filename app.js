@@ -30,5 +30,6 @@ app.get('/', (req, res) => res.send('It is working properly'));
 const port = process.env.PORT || CONSTANT.PORT;
 app.listen(port, console.log(`Server is starting at port ${port}`));
 
-mongoose.connect('mongodb://localhost/covid19',
+const url = process.env.MONGO_URL || 'mongodb://localhost/covid19';
+mongoose.connect(url,
   {useNewUrlParser: true}, () => console.log('Connected to database'));
