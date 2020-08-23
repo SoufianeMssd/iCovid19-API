@@ -24,6 +24,8 @@ app.use(morgan('dev', {
 app.use('/corona', coronaRoute);
 app.use('/feedback', feedbackRoute);
 
+app.get('/', (req, res) => res.send('It is working properly'));
+
 
 const port = process.env.PORT || CONSTANT.PORT;
 app.listen(port, console.log(`Server is starting at port ${port}`));
