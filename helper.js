@@ -1,4 +1,4 @@
 module.exports = CONSTANT = {
   'PORT': 3001,
-  'authSecret': '£¨2*mYh4¨/+',
+  'ORIGIN': 'https://icovid-19.herokuapp.com/',
 };

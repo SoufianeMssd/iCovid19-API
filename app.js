@@ -11,7 +11,11 @@ app.use(bodyParser.json());
 const coronaRoute = require('./routes/corona');
 const feedbackRoute = require('./routes/feedback');
 
-app.use(cors());
+const corsOptions = {
+  origin: CONSTANT.ORIGIN,
+};
+
+app.use(cors(corsOptions));
 // Only log error messages
 app.use(morgan('dev', {
   skip: function(req, res) {
