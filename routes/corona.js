@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
-    const savedUpdates = await corona.find();
+    const savedUpdates = await corona.find().sort({createAt: 1});
     res.status(200).json(savedUpdates);
   } catch (err) {
     res.json({message: err.message});
